@@ -1,12 +1,15 @@
 import React from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Logo from "./Logo";
 import Button from "./Button";
 
 const Navbar = ({ toggle }) => {
+  const pathname = usePathname();
+
   return (
     <>
-      <div className="w-full h-20 bg-emerald-800 sticky top-0">
+      <div className="w-full h-20 nav sticky top-0">
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             <Logo />
@@ -29,24 +32,38 @@ const Navbar = ({ toggle }) => {
             </button>
             <ul className="hidden md:flex gap-x-6 text-white ">
               <li>
-                <Link href="/about">
+                <Link
+                  className={`link ${pathname === "/" ? "active" : ""}`}
+                  href="/"
+                >
+                  <p>Home</p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`link ${pathname === "/about" ? "active" : ""}`}
+                  href="/about"
+                >
                   <p>About Us</p>
                 </Link>
               </li>
               <li>
-                <Link href="/services">
+                <Link
+                  className={`link ${pathname === "/services" ? "active" : ""}`}
+                  href="/services"
+                >
                   <p>Services</p>
                 </Link>
               </li>
               <li>
-                <Link href="/contacts">
+                <Link
+                  className={`link ${pathname === "/contacts" ? "active" : ""}`}
+                  href="/contacts"
+                >
                   <p>Contacts</p>
                 </Link>
               </li>
             </ul>
-            <div className="hidden md:block">
-              <Button />
-            </div>
           </div>
         </div>
       </div>

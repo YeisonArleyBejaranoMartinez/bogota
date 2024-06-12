@@ -1,4 +1,57 @@
+:root {
+  --color-verde-esmeralda: #006d3b;
+  --color-azul-claro: #00aaff;
+  --color-amarillo-oro: #ffd700;
+  --color-rojo-carmesi: #d32f2f;
+  --color-gris-suave: #e0e0e0;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* Ejemplos de uso */
+body {
+  background-color: var(--color-gris-suave);
+  color: var(--color-verde-esmeralda);
+}
+.nav{
+  background-color: var(--color-amarillo-oro)
+}
+h1,
+h2,
+h3 {
+  color: var(--color-verde-esmeralda);
+}
+
+a {
+color: indigo;
+}
+a:hover {
+  color: black;
+}
+
+button {
+  background-color: var(--color-rojo-carmesi);
+  color: white;
+}
+
+
+button:hover {
+  background-color: var(--color-amarillo-oro);
+}
+
+ body{
+  margin: 0 1rem;
+  border: 1px solid blue;
+
+ }
+.containerGrid
+{
+  border: 1px solid red;
+  width: 100%;
+  height: 200px;
+}
+.active{
+  color: black ;
+}
